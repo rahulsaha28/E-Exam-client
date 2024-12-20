@@ -23,8 +23,9 @@ const CountDown = () => {
       updateTimer();
       count--;
       if (count === 0) {
+        console.log("Time's up!", count);
         navigate("/pdf");
-        return clearInterval(intervalID);
+        clearInterval(intervalID);
       }
     }, 1000);
 

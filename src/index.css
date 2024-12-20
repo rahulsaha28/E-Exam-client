@@ -39,6 +39,8 @@ body {
   @apply relative inline-block w-5 h-5 border-2 border-gray-300 rounded-full peer-checked:border-blue-600 after:contents after:absolute after:w-3 after:h-3 after:rounded-full after:left-1/2 after:translate-y-2 after:-translate-x-1/2 after:top-1/2  peer-checked:after:-translate-y-1/2 transition-all  after:transition-all after:delay-500 peer-checked:after:bg-blue-500;
 }
 
+
+
 @layer base {
   img {
     display: inline;

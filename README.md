@@ -4,6 +4,8 @@
 
 [Client](https://github.com/rahulsaha28/E-Exam-server.git)
 
+[Live](https://e-exam-client.vercel.app/)
+
 ## Local run
 
 1. After clone from github enter the `client` folder

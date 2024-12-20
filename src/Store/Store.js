@@ -172,7 +172,7 @@ export const useCountDown = create((set) => ({
   updateTimer: () =>
     set((state) => {
       const { totalTime } = state;
-      if (totalTime >= 0) {
+      if (totalTime > 0) {
         console.log("totalTime", totalTime);
         const newTime = totalTime - 1;
         const hours = Math.floor(newTime / 3600);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { MdCancel } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -17,6 +17,11 @@ const Nav = () => {
   const { mobileMenuActive, actionMobileMenuActive } = useMobileMenuActive(
     (state) => state
   );
+
+  useEffect(() => {
+    actionMobileMenuActive(false);
+  }, [activeIndex]);
+
   return (
     <div className="fixed w-full py-0 shadow-sm bg-pale-sky">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -56,7 +61,12 @@ const Nav = () => {
         {mobileMenuActive && (
           <div className="flex flex-col items-center py-3 space-y-2 md:hidden">
             {navItems.map(({ name, path }, i) => (
-              <Link key={i} className="link" to={path}>
+              <Link
+                onClick={() => setActiveIndex(i)}
+                key={i}
+                className={`link ${activeIndex === i ? "active" : ""}`}
+                to={path}
+              >
                 {name}
               </Link>
             ))}

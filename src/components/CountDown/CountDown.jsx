@@ -22,7 +22,7 @@ const CountDown = () => {
     intervalID = setInterval(() => {
       updateTimer();
       count--;
-      if (count === 1) {
+      if (count === 0) {
         navigate("/pdf");
         return clearInterval(intervalID);
       }
@@ -31,7 +31,7 @@ const CountDown = () => {
     return () => {
       clearInterval(intervalID);
     };
-  }, []);
+  }, [startTimer]);
 
   return (
     <div className="space-y-2">

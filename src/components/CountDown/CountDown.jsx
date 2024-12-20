@@ -22,12 +22,10 @@ const CountDown = () => {
     intervalID = setInterval(() => {
       updateTimer();
       count--;
-      if (count === 0) {
-        console.log("Time's up!", count);
-        navigate("/pdf");
+      if (count < 0) {
         clearInterval(intervalID);
+        navigate("/pdf");
       }
-      console.log(count);
     }, 1000);
 
     return () => {

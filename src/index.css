@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Russo One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.special-font {
+  font-feature-settings: "kern" 1;
+  color: hsl(205, 93%, 74%);
+}
+
+@layer components {
+  .scrollBar-thin {
+    scrollbar-width: thin;
+  }
+  .scrollBar-none {
+    scrollbar-width: none;
+  }
+}
+.btn-1 {
+  @apply px-4 py-2 text-sm text-white rounded-md hover:bg-midnight-blue bg-vibrant-blue;
+}
+
+.counter {
+  @apply content-center w-16 h-10 text-center text-white rounded-md shadow-lg bg-slate-800 hover:bg-slate-500 hover:border-[2px] hover:border-slate-800;
+}
+
+.counter-str {
+  @apply content-center w-16 h-10 text-center  rounded-md   text-slate-500;
+}
+
+.pointer {
+  @apply relative inline-block w-5 h-5 border-2 border-gray-300 rounded-full peer-checked:border-blue-600 after:contents after:absolute after:w-3 after:h-3 after:rounded-full after:left-1/2 after:translate-y-2 after:-translate-x-1/2 after:top-1/2  peer-checked:after:-translate-y-1/2 transition-all  after:transition-all after:delay-500 peer-checked:after:bg-blue-500;
+}
+
+@layer base {
+  img {
+    display: inline;
+  }
+}

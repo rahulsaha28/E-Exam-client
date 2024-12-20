@@ -1,0 +1,6 @@
+.link {
+  @apply flex items-center text-center uppercase transition-all  hover:text-color-active relative hover:after:animate-hover-bottom after:container after:absolute after:rounded-full after:-bottom-1 after:left-0 after:h-1 hover:after:bg-color-active;
+}
+.link.active {
+  @apply text-color-active after:bg-color-active;
+}

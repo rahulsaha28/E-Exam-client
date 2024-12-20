@@ -27,6 +27,7 @@ const CountDown = () => {
         navigate("/pdf");
         clearInterval(intervalID);
       }
+      console.log(count);
     }, 1000);
 
     return () => {

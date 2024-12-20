@@ -11,18 +11,19 @@ const CountDown = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const timer = exam?.totalTime?.hour * 3600 + exam?.totalTime?.min * 60 || 0;
     startTimer({
       hours: exam?.totalTime?.hour,
       min: exam?.totalTime?.min,
       sec: 0,
     });
     let intervalID;
-    let count = totalTime;
+    let count = totalTime || timer;
 
     intervalID = setInterval(() => {
       updateTimer();
       count--;
-      if (count < 1) {
+      if (count < 0) {
         clearInterval(intervalID);
         navigate("/pdf");
       }
